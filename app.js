@@ -11,21 +11,28 @@ const handleReset = () => {
   counter = 0;
   value.style.color = 'hsl(209, 61%, 16%)';
   value.textContent = counter;
-  //   console.log(counter);
 };
 
 const handleDecrease = () => {
   counter--;
-  value.style.color = 'red';
+  if (counter <= -1) {
+    value.style.color = 'red';
+  }
+  if (counter == 0) {
+    value.style.color = 'hsl(209, 61%, 16%)';
+  }
   value.textContent = counter;
-  //   console.log(counter);
 };
 
 const handleIncrease = () => {
   counter++;
-  value.style.color = 'green';
+  if (counter >= 1) {
+    value.style.color = 'green';
+  }
+  if (counter == 0) {
+    value.style.color = 'hsl(209, 61%, 16%)';
+  }
   value.textContent = counter;
-  //   console.log(counter);
 };
 
 //EventListeners
